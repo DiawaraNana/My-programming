@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+}
+/*division1*/
+.back {
+    display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    text-align: center;
+    position: relative;
+	background-color: #34495e;
+    width: 100%; /* Définit la largeur de .back */
+    height: 500px;
+    transition: all 0.1s ease; /* Assure que l'élément prend toute la hauteur de la fenêtre */
+}
+
+.back::before {
+  
+    background-position: center; /* Centrer l'image dans le conteneur */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-size: cover; 
+    background-attachment: fixed; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    content: "";
+    z-index: -1; /* Assure que le fond d'écran est derrière le contenu */
+}
+@keyframes flash {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: #d0d3d4 ; /* Une couleur éclatante pour l'effet flash */
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Appliquer l'animation lorsque la souris passe dessus */
+.back:hover {
+    animation: flash 0.3s ease; /* Durée de l'animation */
+}
+
+.divcadre {
+    border: 2px ridge white;
+    border-radius: 10px;
+    width: 450px;
+    height: 900px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 100px; 
+    margin-left: 50px;
+    margin-bottom: 50px;
+	left:-500px;
+	
+}
+/*Text dans le background*/
+.divtext {
+    margin-top: 40px;
+    color: white;
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+#maphoto {
+    border: 2px ridge white;
+    width: 200px;
+    height: 150px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 50%; /* Rend la bordure circulaire */
+    object-fit: cover;
+    
+}
+
+
+.divtext2 {
+    color: white;
+    font-family:'Times New Roman', Times, serif ;
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 10px;
+    margin: 0; 
+}
+
+.divtext3 {
+    color: white;
+    font-family: 'Verdana', sans-serif;
+    font-size: 100px;
+    margin-top: 10px; 
+    text-align: center;
+}
+.divligne{
+    color:#1f618d;
+    font-family: 'Verdana', sans-serif;
+    font-size: 20px;
+    margin-top: 10px; 
+    text-align: left; 
+    display: flex; 
+    flex-direction: column;
+
+}/*fin division1*/
+
+.divecri {
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    display: flex; /* Active Flexbox */
+    flex-direction: column; /* Aligne les éléments verticalement */
+    justify-content: center; /* Centrage vertical des textes */
+    align-items: center; /* Centrage horizontal des textes */
+    right: 400px; /* Positionnement à droite */
+    top: 50px; /* Positionnement en haut */
+    transform: translateX(20px); 
+}
+
+/* Début de la 2 eme division :La propriété display: flex; sur .container aligne les colonnes côte à côte.
+flex-direction: column; dans .column aligne les éléments (image et texte) en colonne.*/
+.division2{
+    width: 90%;
+    height: 900px;
+    display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      margin: 0 auto;
+      margin-bottom: 100px;
+
+   
+}
+
+.divl1{
+    color:#1f618d ;
+    font-size: 20px;
+    margin-top: 0; 
+    width: 500px;
+    text-align: left;
+
+}
+
+#imgdiv {
+    max-width: 80%;
+    height: 50%;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+
+
+
+.divtext5 {
+    color: #34495e;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    text-align: center; 
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+
+.column {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48%;
+  }
+ /* Inversion dans la deuxième colonne */
+ .column.reverse {
+    flex-direction: column-reverse;
+  }
+/*fin de la 2eme division*/
+
+
+.divtext4 {
+    color: #34495e;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    margin-top: 30px;
+    text-align: center; /* Centrer le titre */
+}
+
+.divlig {
+    border: 5px ridge #34495e; /* Bordure stylisée */
+    border-radius: 15px; /* Arrondir les coins */
+    color:#1f618d ;
+    font-size: 20px;
+    text-align: center; /* Centrer le texte à l'intérieur du cadre */
+    display: flex;
+    flex-direction: column; /* Organisation verticale du contenu */
+    justify-content: center; /* Centre le contenu verticalement */
+    align-items: center; /* Centre le contenu horizontalement */
+    width: 700px; /* Réduit la largeur pour un meilleur affichage */
+    margin: 5px auto; /* Centrage horizontal automatique et espacement supérieur */
+    padding: 20px; /* Ajoute de l'espace entre le texte et les bords du cadre */
+    background-color: #f7f9f9; /* Ajoute un fond pour mettre en valeur le cadre */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une légère ombre pour un effet élégant */
+    overflow-y: auto; /* Barre de défilement verticale si le texte dépasse */
+    word-wrap: break-word;
+}
+
+
+
+/*debut division 3*/
+.division3 {
+    width: 100%;
+    height: 700px;
+    background-color: black;
+    color: white; /* Ajout de la couleur de texte blanche pour contraster avec le fond noir */
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 0 auto;
+
+}
+
+.div3text {
+    border: 2px ridge ; /* Changement de couleur de la bordure en doré */
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 300px;
+    height: 40px;
+    padding: auto;
+    background-color: #1f618d; /* Couleur de fond dorée */
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 20px;
+    color: white; /* Texte en blanc */
+}
+
+.skill-item {
+    display: flex;
+    align-items: center; /* Aligner les éléments horizontalement */
+    margin-bottom: 15px;
+}
+
+.skill-icon {
+    width: 60px; /* Taille de l'icône */
+    height: 60px;
+    margin-right: 30px; 
+    margin-left: 15px;/* Espace entre l'icône et le texte */
+}
+
+.divtext3 {
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white; /* Texte en blanc pour les descriptions */
+}
+/*fin division3*/
+/* Section Contact */
+.contact-section {
+    width: 100%; /* Prend toute la largeur */
+    height: auto; /* S'adapte au contenu */
+    padding: 20px;
+	margin-top: 300px;
+    background-color: black;
+    background-repeat: repeat;
+    color: white;
+    text-align: center;
+    align-items: left;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre de la section */
+.contact-title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: #f7f9f9;
+    margin-bottom: 15px;
+}
+
+/* Ligne séparatrice */
+.divligne {
+    color: #1f618d;
+    font-family: 'Verdana', sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Élément de contact */
+.contact-item {
+    display: flex;
+    align-items: center; /* Centre les éléments verticalement (icône et texte) */
+    justify-content: center; /* Centre les éléments horizontalement */
+    margin-bottom: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left; /* Aligne le texte à gauche par défaut */
+}
+
+/* Icône de contact */
+.contact-icon {
+    width: 40px; /* Taille de l'icône */
+    height: 40px;
+    margin-right: 10px; /* Espacement entre l'icône et le texte */
+}
+
+/* Ajout d'un espace entre les éléments pour un meilleur alignement */
+.contact-item > div {
+    display: flex;
+    align-items: center;
+}
+
+
+/*division4 repeat(nombre_de_répétitions, taille).grid-template-columns est utilisée pour définir la structure des colonnes d'une grille CSS*/
+.division4 {
+    width: 100%; /* Utilise toute la largeur disponible */
+    height: 700px; /* Hauteur définie */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+    gap: 20px; /* Espace entre les éléments du grid */
+    margin-bottom: 20px;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-left: 20px; /* Un petit padding à gauche */
+    padding-right: 20px; /* Un petit padding à droite */
+}
+
+#imgs {
+    width: 100%; /* Les images s'ajustent à la largeur de leur conteneur */
+    height: 300px; /* La hauteur s'ajuste automatiquement */
+    margin-right: 10px; 
+    margin-top: 20px; 
+    margin-left: 10px;
+    object-fit: cover; /* Les images sont redimensionnées sans déformer */
+}
+
+#imgs:hover {
+    opacity: 0.9;
+    filter: brightness(0.5);
+}
+
+.column-div4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centre les éléments de la colonne */
+    width: 100%;
+}
+
+
+
+
+/*justify-content: space-between : Aligne les parties gauche et droite de chaque ligne de manière équilibrée.*/
