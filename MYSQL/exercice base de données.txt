@@ -1,0 +1,37 @@
+CREATION DE LA BD:
+
+create database salon_coiffure;
+ 
+CREATION DES TABLES:
+
+use salon_coiffure;
+create table client(nom varchar(20),prenom varchar(20),telephone int,id int primary key AUTO_INCREMENT,email varchar(30) UNIQUE);
+
+create table coiffeur(nom varchar(20),prenom varchar(20),specialite(30),id int primary key AUTO_INCREMENT);
+
+
+create table service(type_serv varchar(30),prix int check (prix >0) ,id int PRIMARY key AUTO_INCREMENT);
+
+
+create table rendez_vous(d_ate date,heure time,duree time,id int primary key AUTO_INCREMENT,id_client int,id_coiffeur int,id_service int,foreign key (id_client) REFERENCES client(id),foreign key (id_coiffeur) REFERENCES coiffeur(id),foreign key (id_service) REFERENCES service(id));
+
+create table rendez_vous(d_ate date,heure time  ,duree time,id int primary key AUTO_INCREMENT,id_client int UNIQUE,id_coiffeur int,id_service int,foreign key (id_client) REFERENCES client(id),foreign key (id_coiffeur) REFERENCES coiffeur(id),foreign key (id_service) REFERENCES service(id),unique (d_ate,heure,));
+
+INSERTION DES DONNÉES:
+
+
+insert into client(nom,prenom,telephone,email) values ('Mabenga','Mathieu',07772211,'mabenga@gmail.com'),('Alami','ahmed',077745510,'ahmed@gmail.com'),('Nouchi','alex',076552213,'nouchi@example.com'),('Nara','Sophia',07779211,'nara@gmail.com'),('Saban','Sulan',07772416,'sulan@example.com')
+
+
+
+insert into coiffeur(nom,prenom,specialite) values ('SALAMI','Manan','coloration vegetale'),
+('Seyidina','Kadja','lissage bresilien'),
+('Nabad','Walid','coiffure de marié'),('Diarra','Sophie','coupe dame'),('Suban','Haman','ombré')
+
+insert into service(type_serv,prix) values ('barbier',1200),('coiffuer_visagiste',4000),('coloration',3200),('chignon',500),('coupe nouvelle',400),('coupe de cheveux',500);
+
+insert into rendez_vous(d_ate,heure,duree,id_client,id_coiffeur,id_service) values ('2024-12-01','18:30:00','01:00:00',1,2,3),('2024-12-02','15:30:00','00:30:00',4,2,4),('2024-12-01','14:50:00','04:00:00',5,2,5),('2024-09-05','21:30:00','00:50:00',2,2,3),('2024-02-01','17:00:00','01:00:00',1,4,3)
+
+Requetes:
+use salon_coiffure;
+select  client.nom,client.prenom,client.id,rendez_vous.id_client from client,rendez_vous where client.id=id_client
